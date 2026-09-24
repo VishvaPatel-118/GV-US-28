@@ -722,3 +722,106 @@ h2 {
         transition-duration: 0.01ms !important;
     }
 }
+
+
+/* =========================
+   SHAYARI SCREENS
+========================= */
+
+.shayari-screen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.shayari-content {
+    width: min(760px, 100%);
+    position: relative;
+    z-index: 2;
+}
+
+.shayari-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.shayari-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(38px, 6vw, 62px);
+    font-weight: 500;
+    color: var(--cream);
+    margin-bottom: 40px;
+}
+
+.shayari-text {
+    position: relative;
+    padding: 30px 20px;
+    margin-bottom: 40px;
+}
+
+.shayari-text::before,
+.shayari-text::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold),
+        transparent
+    );
+}
+
+.shayari-text::before {
+    top: 0;
+}
+
+.shayari-text::after {
+    bottom: 0;
+}
+
+.shayari-text p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(21px, 3vw, 29px);
+    line-height: 1.55;
+    color: var(--cream-soft);
+    margin-bottom: 15px;
+}
+
+.shayari-text p:last-child {
+    margin-bottom: 0;
+    color: var(--white);
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .shayari-screen {
+        padding: 30px 20px;
+    }
+
+    .shayari-content h2 {
+        font-size: 42px;
+        margin-bottom: 32px;
+    }
+
+    .shayari-text {
+        padding: 27px 8px;
+        margin-bottom: 32px;
+    }
+
+    .shayari-text p {
+        font-size: 21px;
+        line-height: 1.5;
+    }
+}
