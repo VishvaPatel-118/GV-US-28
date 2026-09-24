@@ -1,0 +1,724 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, rgba(168, 67, 93, 0.18), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(211, 155, 111, 0.10), transparent 35%),
+        #160b10;
+
+    color: #fff7f4;
+
+    font-family: "Poppins", sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   COMMON SCREEN
+========================= */
+
+.screen {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    position: relative;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.background-effects {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+
+    color: rgba(255, 175, 193, 0.16);
+
+    font-family: serif;
+
+    animation: floatingHeart 8s ease-in-out infinite;
+}
+
+.heart-1 {
+    left: 8%;
+    bottom: -30px;
+    font-size: 42px;
+    animation-delay: 0s;
+}
+
+.heart-2 {
+    left: 25%;
+    bottom: -40px;
+    font-size: 25px;
+    animation-delay: 2s;
+}
+
+.heart-3 {
+    right: 18%;
+    bottom: -30px;
+    font-size: 55px;
+    animation-delay: 4s;
+}
+
+.heart-4 {
+    right: 8%;
+    bottom: -20px;
+    font-size: 30px;
+    animation-delay: 1s;
+}
+
+.heart-5 {
+    left: 50%;
+    bottom: -30px;
+    font-size: 20px;
+    animation-delay: 5s;
+}
+
+@keyframes floatingHeart {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(25deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+.small-label {
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    color: #d7a58e;
+
+    margin-bottom: 18px;
+}
+
+h1,
+h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 600;
+}
+
+
+/* =========================
+   LANDING SCREEN
+========================= */
+
+.landing-screen {
+    text-align: center;
+
+    z-index: 1;
+}
+
+.landing-content {
+    max-width: 700px;
+
+    animation: fadeUp 1.3s ease forwards;
+}
+
+.landing-content h1 {
+    font-size: clamp(48px, 9vw, 90px);
+
+    line-height: 0.95;
+
+    margin-bottom: 30px;
+}
+
+.landing-content h1 span {
+    display: block;
+
+    color: #e8a5a8;
+
+    font-style: italic;
+}
+
+.landing-subtitle {
+    max-width: 520px;
+
+    margin: 0 auto 40px;
+
+    color: #d9c5c2;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.main-button {
+    border: 1px solid rgba(239, 184, 173, 0.45);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(154, 63, 87, 0.95),
+            rgba(104, 39, 58, 0.95)
+        );
+
+    color: white;
+
+    padding: 15px 28px;
+
+    border-radius: 50px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35),
+        0 0 30px rgba(164, 70, 94, 0.15);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.main-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.4),
+        0 0 35px rgba(214, 104, 132, 0.25);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(177, 75, 101, 1),
+            rgba(117, 44, 66, 1)
+        );
+}
+
+.main-button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================
+   INTRO SCREEN
+========================= */
+
+.intro-screen {
+    z-index: 1;
+}
+
+.letter-intro {
+    width: min(600px, 100%);
+
+    text-align: center;
+
+    animation: fadeUp 1s ease forwards;
+}
+
+.envelope-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(151, 57, 82, 0.18);
+
+    border: 1px solid rgba(231, 161, 158, 0.25);
+
+    color: #e9a7a8;
+
+    font-size: 30px;
+
+    animation: softPulse 3s ease-in-out infinite;
+}
+
+.letter-intro h2 {
+    font-size: clamp(42px, 8vw, 65px);
+
+    margin-bottom: 30px;
+
+    color: #f5d8d0;
+}
+
+.intro-text {
+    color: #d9c5c2;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+}
+
+.intro-text p {
+    margin-bottom: 20px;
+}
+
+.ready-text {
+    font-family: "Cormorant Garamond", serif;
+
+    color: #e8a5a8;
+
+    font-size: 27px;
+
+    font-style: italic;
+
+    margin-top: 25px;
+}
+
+.letter-intro .main-button {
+    margin-top: 15px;
+}
+
+
+/* =========================
+   LETTER SCREEN
+========================= */
+
+.letter-screen {
+    align-items: flex-start;
+
+    padding-top: 80px;
+    padding-bottom: 100px;
+
+    z-index: 1;
+}
+
+.letter-wrapper {
+    width: min(780px, 100%);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.letter-card {
+    width: 100%;
+
+    padding: 60px clamp(25px, 7vw, 75px);
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffaf5,
+            #f7eee8
+        );
+
+    color: #3b2426;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.4);
+
+    animation: letterAppear 1.2s ease forwards;
+}
+
+.letter-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 10px;
+
+    border: 1px solid rgba(130, 72, 65, 0.15);
+
+    pointer-events: none;
+}
+
+.letter-decoration {
+    text-align: center;
+
+    color: #9e5362;
+
+    font-size: 28px;
+
+    margin-bottom: 15px;
+}
+
+.letter-date {
+    text-align: center;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    color: #9d7470;
+
+    margin-bottom: 18px;
+}
+
+.letter-title {
+    text-align: center;
+
+    font-size: clamp(32px, 6vw, 48px);
+
+    line-height: 1;
+
+    color: #713945;
+
+    margin-bottom: 45px;
+}
+
+.main-letter {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 21px;
+
+    line-height: 1.75;
+
+    color: #432b2d;
+}
+
+.main-letter p {
+    margin-bottom: 27px;
+}
+
+.main-letter p:first-child {
+    text-align: center;
+
+    font-size: 26px;
+
+    font-weight: 600;
+
+    color: #763b49;
+
+    margin-bottom: 35px;
+}
+
+.main-letter p:last-child {
+    text-align: center;
+
+    font-size: 25px;
+
+    color: #763b49;
+
+    margin-top: 40px;
+}
+
+.letter-wrapper > .main-button {
+    margin-top: 40px;
+}
+
+
+/* =========================
+   FINAL SCREEN
+========================= */
+
+.final-screen {
+    text-align: center;
+
+    z-index: 1;
+}
+
+.final-content {
+    width: min(650px, 100%);
+
+    animation: fadeUp 1s ease forwards;
+}
+
+.final-heart {
+    font-family: serif;
+
+    font-size: 70px;
+
+    color: #d88b98;
+
+    margin-bottom: 20px;
+
+    animation: softPulse 3s ease-in-out infinite;
+}
+
+.final-content h2 {
+    font-size: clamp(42px, 8vw, 68px);
+
+    color: #f2ccc5;
+
+    margin-bottom: 35px;
+}
+
+.final-text {
+    color: #d9c5c2;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 21px;
+
+    line-height: 1.7;
+}
+
+.final-text p {
+    margin-bottom: 25px;
+}
+
+.special-line {
+    color: #e8a5a8;
+
+    font-size: 30px;
+
+    font-style: italic;
+}
+
+.big-final-line {
+    color: #f0cbc4;
+
+    font-size: 30px;
+
+    font-weight: 600;
+
+    margin-top: 40px;
+}
+
+.signature {
+    color: #d7a58e;
+
+    font-size: 24px;
+
+    font-style: italic;
+
+    margin-top: 40px;
+}
+
+.final-content .main-button {
+    margin-top: 25px;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes letterAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+@keyframes softPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.06);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .screen {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .landing-content h1 {
+        font-size: 53px;
+    }
+
+    .landing-subtitle {
+        font-size: 14px;
+
+        line-height: 1.75;
+
+        padding: 0 10px;
+    }
+
+    .small-label {
+        font-size: 9px;
+
+        letter-spacing: 3px;
+    }
+
+    .letter-card {
+        padding: 45px 25px;
+    }
+
+    .letter-card::before {
+        inset: 7px;
+    }
+
+    .letter-title {
+        font-size: 36px;
+
+        margin-bottom: 35px;
+    }
+
+    .main-letter {
+        font-size: 19px;
+
+        line-height: 1.7;
+    }
+
+    .main-letter p {
+        margin-bottom: 23px;
+    }
+
+    .main-letter p:first-child {
+        font-size: 22px;
+    }
+
+    .main-letter p:last-child {
+        font-size: 22px;
+    }
+
+    .intro-text {
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+    .final-text {
+        font-size: 19px;
+
+        line-height: 1.65;
+    }
+
+    .special-line {
+        font-size: 27px;
+    }
+
+    .big-final-line {
+        font-size: 26px;
+    }
+
+    .signature {
+        font-size: 22px;
+    }
+
+    .main-button {
+        padding: 14px 23px;
+
+        font-size: 12px;
+    }
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+    }
+}
