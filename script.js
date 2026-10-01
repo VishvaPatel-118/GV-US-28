@@ -11,6 +11,7 @@ const shayari2Screen = document.getElementById("shayari2Screen");
 const shayari3Screen = document.getElementById("shayari3Screen");
 const shayari4Screen = document.getElementById("shayari4Screen");
 const shayari5Screen = document.getElementById("shayari5Screen");
+const shayari6Screen = document.getElementById("shayari6Screen");
 
 const finalScreen = document.getElementById("finalScreen");
 
@@ -28,6 +29,7 @@ const shayari1NextBtn = document.getElementById("shayari1NextBtn");
 const shayari2NextBtn = document.getElementById("shayari2NextBtn");
 const shayari3NextBtn = document.getElementById("shayari3NextBtn");
 const shayari4NextBtn = document.getElementById("shayari4NextBtn");
+const shayari5NextBtn = document.getElementById("shayari5NextBtn");
 
 const finalNoteBtn = document.getElementById("finalNoteBtn");
 const replayBtn = document.getElementById("replayBtn");
@@ -46,6 +48,7 @@ const screens = [
     shayari3Screen,
     shayari4Screen,
     shayari5Screen,
+    shayari6Screen,
     finalScreen
 ];
 
@@ -64,7 +67,9 @@ function showScreen(screenToShow) {
 
     });
 
-    screenToShow.classList.remove("hidden");
+    if (screenToShow) {
+        screenToShow.classList.remove("hidden");
+    }
 
     window.scrollTo({
         top: 0,
@@ -78,99 +83,150 @@ function showScreen(screenToShow) {
    OPEN SURPRISE
 ========================= */
 
-openSurpriseBtn.addEventListener("click", () => {
+if (openSurpriseBtn) {
 
-    showScreen(introScreen);
+    openSurpriseBtn.addEventListener("click", () => {
 
-});
+        showScreen(introScreen);
+
+    });
+
+}
 
 
 /* =========================
    READ LETTER
 ========================= */
 
-readLetterBtn.addEventListener("click", () => {
+if (readLetterBtn) {
 
-    showScreen(letterScreen);
+    readLetterBtn.addEventListener("click", () => {
 
-});
+        showScreen(letterScreen);
+
+    });
+
+}
 
 
 /* =========================
    START SHAYARI
 ========================= */
 
-shayariStartBtn.addEventListener("click", () => {
+if (shayariStartBtn) {
 
-    showScreen(shayari1Screen);
+    shayariStartBtn.addEventListener("click", () => {
 
-});
+        showScreen(shayari1Screen);
+
+    });
+
+}
 
 
 /* =========================
    SHAYARI 1 → SHAYARI 2
 ========================= */
 
-shayari1NextBtn.addEventListener("click", () => {
+if (shayari1NextBtn) {
 
-    showScreen(shayari2Screen);
+    shayari1NextBtn.addEventListener("click", () => {
 
-});
+        showScreen(shayari2Screen);
+
+    });
+
+}
 
 
 /* =========================
    SHAYARI 2 → SHAYARI 3
 ========================= */
 
-shayari2NextBtn.addEventListener("click", () => {
+if (shayari2NextBtn) {
 
-    showScreen(shayari3Screen);
+    shayari2NextBtn.addEventListener("click", () => {
 
-});
+        showScreen(shayari3Screen);
+
+    });
+
+}
 
 
 /* =========================
    SHAYARI 3 → SHAYARI 4
 ========================= */
 
-shayari3NextBtn.addEventListener("click", () => {
+if (shayari3NextBtn) {
 
-    showScreen(shayari4Screen);
+    shayari3NextBtn.addEventListener("click", () => {
 
-});
+        showScreen(shayari4Screen);
+
+    });
+
+}
 
 
 /* =========================
    SHAYARI 4 → SHAYARI 5
 ========================= */
 
-shayari4NextBtn.addEventListener("click", () => {
+if (shayari4NextBtn) {
 
-    showScreen(shayari5Screen);
+    shayari4NextBtn.addEventListener("click", () => {
 
-});
+        showScreen(shayari5Screen);
+
+    });
+
+}
 
 
 /* =========================
-   SHAYARI 5 → FINAL NOTE
+   SHAYARI 5 → SHAYARI 6
 ========================= */
 
-finalNoteBtn.addEventListener("click", () => {
+if (shayari5NextBtn) {
 
-    showScreen(finalScreen);
+    shayari5NextBtn.addEventListener("click", () => {
 
-});
+        showScreen(shayari6Screen);
+
+    });
+
+}
+
+
+/* =========================
+   SHAYARI 6 → FINAL NOTE
+========================= */
+
+if (finalNoteBtn) {
+
+    finalNoteBtn.addEventListener("click", () => {
+
+        showScreen(finalScreen);
+
+    });
+
+}
 
 
 /* =========================
    REPLAY STORY
 ========================= */
 
-replayBtn.addEventListener("click", () => {
+if (replayBtn) {
 
-    showScreen(landingScreen);
+    replayBtn.addEventListener("click", () => {
 
-});
+        showScreen(landingScreen);
+
+    });
+
+}
 
 
 /* =========================
